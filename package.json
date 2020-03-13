@@ -1,0 +1,38 @@
+{
+  "name": "ludumdare32",
+  "version": "0.0.0",
+  "description": "It's the distant future, and the world has become a shadow of its former self with corruption and discontent rife throughout all levels of society... But one hope still remains, humanities greatest weapon of last resort is on the brink of deployment. But it just needs a little more time before it can be used. It falls on you, to protect the Kitchen Sink until it is ready to save the world!",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo nothing to do for target 'build'",
+    "lint": "echo nothing to do for target 'lint'",
+    "test": "echo nothing to do for target 'test'",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NuclearRedeye/ludumdare32.git"
+  },
+  "author": "NuclearRedeye",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NuclearRedeye/ludumdare32/issues"
+  },
+  "homepage": "https://github.com/NuclearRedeye/ludumdare32#readme",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "husky": "^3.0.8",
+    "standard-version": "^7.0.0"
+  }
+}
