@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "echo nothing to do for target 'build'",
-    "lint": "echo nothing to do for target 'lint'",
+    "lint": "eslint --ignore-path .gitignore ./src/**/*.js",
     "test": "echo nothing to do for target 'test'",
     "release": "standard-version"
   },
@@ -32,7 +32,10 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@nuclearredeye/eslint-config": "1.0.1",
+    "eslint": "^6.8.0",
     "husky": "^3.0.8",
+    "prettier": "^1.19.1",
     "standard-version": "^7.0.0"
   }
 }

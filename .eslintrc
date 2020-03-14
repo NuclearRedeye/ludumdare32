@@ -1,0 +1,3 @@
+{
+  "extends": "@nuclearredeye/eslint-config"
+}
