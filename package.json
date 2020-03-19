@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "echo nothing to do for target 'build'",
-    "lint": "eslint --ignore-path .gitignore ./src/**/*.js",
+    "lint": "eslint --ignore-path .gitignore . --ext .js,.ts",
     "test": "echo nothing to do for target 'test'",
     "release": "standard-version"
   },
