@@ -1,0 +1,47 @@
+// prettier-ignore
+export const layer01: string[][] = [
+  ['block', 'block', 'block', 'block', 'pavement-01-l', 'road-01-l', 'road-01-r', 'pavement-01-r', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block' ,'pavement-01-l' ,'road-01-l' ,'road-01-r' ,'pavement-01-r'],
+  ['block', 'block', 'block', 'block', 'pavement-02-l', 'road-01-l', 'road-01-r', 'pavement-02-r', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block' ,'pavement-02-l' ,'road-01-l' ,'road-01-r' ,'pavement-02-r'],
+  ['block', 'block', 'block', 'block', 'pavement-01-l', 'road-01-l', 'road-01-r', 'pavement-01-r', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block' ,'pavement-01-l' ,'road-01-l' ,'road-01-r' ,'pavement-01-r'],
+  ['pavement-01-t', 'pavement-01-t', 'pavement-02-t', 'pavement-01-t', 'pavement-03-t', 'road-01-l', 'road-01-r', 'pavement-03-r', 'pavement-02-t', 'pavement-01-t', 'pavement-01-t', 'pavement-02-t', 'pavement-01-t', 'pavement-01-t', 'pavement-02-t', 'pavement-01-t' ,'pavement-03-t' ,'road-01-l' ,'road-01-r' ,'pavement-03-r'],
+  ['road-01-t', 'road-01-t', 'road-01-t', 'road-01-t', 'road-04-t', 'road-01-l', 'road-01-r', 'road-03-b', 'road-01-t', 'road-01-t', 'road-01-t', 'road-01-t', 'road-01-t', 'road-01-t', 'road-01-t', 'road-01-t', 'road-04-t', 'road-01-l', 'road-01-r', 'road-03-b'],
+  ['road-01-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-03-t', 'road-01-l', 'road-01-r', 'road-04-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-03-t', 'road-01-l', 'road-01-r', 'road-04-b'],
+  ['pavement-01-b', 'pavement-01-b', 'pavement-02-b', 'pavement-01-b', 'pavement-03-l', 'road-01-l', 'road-01-r', 'pavement-03-b', 'pavement-02-b', 'pavement-01-b', 'pavement-01-b', 'pavement-02-b', 'pavement-01-b', 'pavement-01-b', 'pavement-02-b', 'pavement-01-b' ,'pavement-03-l' ,'road-01-l' ,'road-01-r' ,'pavement-03-b'],
+  ['block', 'block', 'block', 'block', 'pavement-01-l', 'road-01-l', 'road-01-r', 'pavement-01-r', 'grass-03-b', 'grass-02-b', 'grass-02-b', 'grass-02-b', 'grass-02-b', 'grass-02-b', 'grass-02-b', 'grass-03-l' ,'pavement-01-l' ,'road-01-l' ,'road-01-r' ,'pavement-01-r'],
+  ['block', 'block', 'block', 'block', 'pavement-01-l', 'road-01-l', 'road-01-r', 'pavement-01-r', 'grass-02-r', 'grass-01', 'grass-01', 'grass-01', 'grass-01', 'grass-01', 'grass-01', 'grass-02-l' ,'pavement-01-l' ,'road-01-l' ,'road-01-r' ,'pavement-01-r'],
+  ['block', 'block', 'block', 'block', 'pavement-01-l', 'road-01-l', 'road-01-r', 'pavement-01-r', 'grass-02-r', 'grass-01', 'grass-01', 'grass-01', 'grass-01', 'grass-01', 'grass-01', 'grass-02-l' ,'pavement-01-l' ,'road-01-l' ,'road-01-r' ,'pavement-01-r'],
+  ['block', 'block', 'block', 'block', 'pavement-01-l', 'road-01-l', 'road-01-r', 'pavement-01-r', 'grass-02-r', 'grass-01', 'grass-01', 'grass-01', 'grass-01', 'grass-01', 'grass-01', 'grass-02-l' ,'pavement-01-l' ,'road-01-l' ,'road-01-r' ,'pavement-01-r'],
+  ['block', 'block', 'block', 'block', 'pavement-02-l', 'road-01-l', 'road-01-r', 'pavement-02-r', 'grass-02-r', 'grass-01', 'grass-01', 'grass-01', 'grass-01', 'grass-01', 'grass-01', 'grass-02-l' ,'pavement-02-l' ,'road-01-l' ,'road-01-r' ,'pavement-02-r'],
+  ['block', 'block', 'block', 'block', 'pavement-01-l', 'road-01-l', 'road-01-r', 'pavement-01-r', 'grass-03-r', 'grass-02-t', 'grass-02-t', 'grass-02-t', 'grass-02-t', 'grass-02-t', 'grass-02-t', 'grass-03-t' ,'pavement-01-l' ,'road-01-l' ,'road-01-r' ,'pavement-01-r'],
+  ['pavement-01-t', 'pavement-01-t', 'pavement-02-t', 'pavement-01-t', 'pavement-03-t', 'road-01-l', 'road-01-r', 'pavement-03-r', 'pavement-02-t', 'pavement-01-t', 'pavement-01-t', 'pavement-02-t', 'pavement-01-t', 'pavement-01-t', 'pavement-02-t', 'pavement-01-t' ,'pavement-03-t' ,'road-01-l' ,'road-01-r' ,'pavement-03-r'],
+  ['road-01-t', 'road-01-t', 'road-01-t', 'road-01-t', 'road-04-t', 'road-01-l', 'road-01-r', 'road-03-b', 'road-01-t', 'road-01-t', 'road-01-t', 'road-01-t', 'road-01-t', 'road-01-t', 'road-01-t', 'road-01-t', 'road-04-t', 'road-01-l', 'road-01-r', 'road-03-b'],
+  ['road-01-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-03-t', 'road-01-l', 'road-01-r', 'road-04-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-01-b', 'road-03-t', 'road-01-l', 'road-01-r', 'road-04-b'],
+  ['pavement-01-b', 'pavement-01-b', 'pavement-02-b', 'pavement-01-b', 'pavement-03-l', 'road-01-l', 'road-01-r', 'pavement-03-b', 'pavement-02-b', 'pavement-01-b', 'pavement-01-b', 'pavement-02-b', 'pavement-01-b', 'pavement-01-b', 'pavement-02-b', 'pavement-01-b' ,'pavement-03-l' ,'road-01-l' ,'road-01-r' ,'pavement-03-b'],
+  ['block', 'block', 'block', 'block', 'pavement-01-l', 'road-01-l', 'road-01-r', 'pavement-01-r', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block' ,'pavement-01-l' ,'road-01-l' ,'road-01-r' ,'pavement-01-r'],
+  ['block', 'block', 'block', 'block', 'pavement-01-l', 'road-01-l', 'road-01-r', 'pavement-01-r', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block' ,'pavement-01-l' ,'road-01-l' ,'road-01-r' ,'pavement-01-r'],
+  ['block', 'block', 'block', 'block', 'pavement-01-l', 'road-01-l', 'road-01-r', 'pavement-01-r', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block' ,'pavement-01-l' ,'road-01-l' ,'road-01-r' ,'pavement-01-r']
+  ];
+
+// prettier-ignore
+export const layer02: string[][] = [
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'kitchen-sink', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
+  ];

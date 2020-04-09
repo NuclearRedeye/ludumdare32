@@ -2,10 +2,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug in Chrome",
+      "name": "Debug",
       "type": "chrome",
       "request": "launch",
-      "file": "${workspaceFolder}/src/index.html"
+      "url": "http://localhost:5000",
+      "webRoot": "${workspaceRoot}/dist/debug",
+      "preLaunchTask": "npm: build"
     }
   ]
 }
