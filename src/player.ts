@@ -11,7 +11,7 @@ export class Player extends Person {
     //this.movement_states = [states.back, states.idle, states.walk, states.jog, states.sprint];
   }
 
-  onKeyDown(kc: number) {
+  onKeyDown(kc: number): void {
     switch (kc) {
       case 32: //Space
         this.shooting = true;
@@ -41,7 +41,7 @@ export class Player extends Person {
     }
   }
 
-  onKeyUp(kc: number) {
+  onKeyUp(kc: number): void {
     switch (kc) {
       case 32: //Space
         this.shooting = false;

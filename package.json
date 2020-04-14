@@ -8,7 +8,7 @@
     "build": "tsc",
     "postbuild": "rollup --config",
     "debug": "serve ./dist/debug",
-    "lint": "eslint --ignore-path .gitignore . --ext .js,.ts",
+    "lint": "eslint ./src --ext .js,.ts",
     "test": "echo nothing to do for target 'test'",
     "release": "standard-version"
   },
@@ -35,7 +35,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "@nuclearredeye/eslint-config": "1.0.1",
+    "@nuclearredeye/eslint-config": "1.1.0",
     "eslint": "^6.8.0",
     "husky": "^3.0.8",
     "prettier": "^1.19.1",

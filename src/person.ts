@@ -49,7 +49,7 @@ export class Person extends Entity {
       sprint: { frames: [0, 1, 2, 3, 4, 5, 6], r: 0.5, t: 5, l: true },
       falling: { frames: [8, 9, 10], r: 0.1, t: 0, l: false },
       dying: { frames: [8, 9, 10], r: 0.1, t: 0, l: false, ns: 'dead' },
-      dead: { frames: [10], r: 0.1, t: 0, l: false },
+      dead: { frames: [10], r: 0.1, t: 0, l: false }
     };
 
     this.sprites = sprites;
@@ -66,9 +66,9 @@ export class Person extends Entity {
     if (this.hp < 0) {
       this.setState(this.states.dying);
     } else {
-      var ctx = this.game.getWorld().layers[0].getContext();
-      var sprite_name = 'splat-0' + (Math.floor(Math.random() * 4) + 1);
-      var sprite = map_sprites[sprite_name];
+      const ctx = this.game.getWorld().layers[0].getContext();
+      const sprite_name = 'splat-0' + (Math.floor(Math.random() * 4) + 1);
+      const sprite = map_sprites[sprite_name];
       ctx.save();
       ctx.translate(this.x, this.y);
       ctx.rotate(this.r * (6.282 / this.rs));
@@ -88,14 +88,12 @@ export class Person extends Entity {
   }
 
   getRect(): Rect {
-    var l = this.x - 3 * 4;
-    var t = this.y - 4 * 4;
-    var r = this.x + 3 * 4;
-    var b = this.y + 4 * 4;
+    const l = this.x - 3 * 4;
+    const t = this.y - 4 * 4;
+    const r = this.x + 3 * 4;
+    const b = this.y + 4 * 4;
     return { l: l, t: t, r: r, b: b };
   }
-
-  think(): void {}
 
   setState(state: State): void {
     if (this.state != state) {
@@ -104,9 +102,9 @@ export class Person extends Entity {
       if (state.t !== undefined) this.t = state.t;
 
       if (this.state == this.states.dying) {
-        var ctx = this.game.getWorld().layers[0].getContext();
-        var sprite_name = 'stain-0' + (Math.floor(Math.random() * 4) + 1);
-        var sprite = map_sprites[sprite_name];
+        const ctx = this.game.getWorld().layers[0].getContext();
+        const sprite_name = 'stain-0' + (Math.floor(Math.random() * 4) + 1);
+        const sprite = map_sprites[sprite_name];
         ctx.save();
         ctx.translate(this.x, this.y);
         ctx.rotate(this.r * (6.282 / this.rs));
@@ -123,9 +121,9 @@ export class Person extends Entity {
         );
         ctx.restore();
       } else if (this.state == this.states.dead) {
-        var ctx = this.game.getWorld().layers[0].getContext();
-        var sprite_name = 'splat-0' + (Math.floor(Math.random() * 4) + 1);
-        var sprite = map_sprites[sprite_name];
+        const ctx = this.game.getWorld().layers[0].getContext();
+        const sprite_name = 'splat-0' + (Math.floor(Math.random() * 4) + 1);
+        const sprite = map_sprites[sprite_name];
         ctx.save();
         ctx.translate(this.x, this.y);
         ctx.rotate(this.r * (6.282 / this.rs));
@@ -154,10 +152,10 @@ export class Person extends Entity {
         ctx.restore();
         this.a = false;
 
-        var w = this.game.getWorld();
         this.game.score += 50;
 
         // FIXME: This shouldn't be here!
+        //const w = this.game.getWorld();
         //w.addEntity(new Civilian(w.getRect(), this.sprites, this.game));
         //w.addEntity(new Zombie(w.getRect(), this.sprites, this.game));
       }
@@ -173,13 +171,13 @@ export class Person extends Entity {
     }
   }
 
-  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   update(cr: Rect): void {
     if (this.a == true) {
       this.rotate(this.rv);
 
       //Calculate Movement
-      var radians = this.r * (6.282 / this.rs);
+      const radians = this.r * (6.282 / this.rs);
 
       this.xv = this.t * Math.cos(radians);
       this.yv = this.t * Math.sin(radians);
@@ -209,7 +207,7 @@ export class Person extends Entity {
       }
 
       if (this.shooting == true) {
-        var w = this.game.getWorld();
+        const w = this.game.getWorld();
         w.addProjectile(new Projectile(w.getRect(), this));
       }
     }

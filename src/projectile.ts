@@ -21,10 +21,11 @@ export class Projectile extends Entity {
     this.hp = 25; //Projectile hit points
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   update(cr: Rect): void {
     if (this.a == true) {
       //Calculate Movement
-      var radians = this.r * (6.282 / this.rs);
+      const radians = this.r * (6.282 / this.rs);
 
       const xv = this.t * Math.cos(radians);
       const yv = this.t * Math.sin(radians);

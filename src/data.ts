@@ -10,7 +10,7 @@ export const map_sprites: SpriteMap = {
   'stain-01': { r: 31, c: 0, o: false, p: 0, d: 0 },
   'stain-02': { r: 31, c: 1, o: false, p: 0, d: 0 },
   'stain-03': { r: 31, c: 2, o: false, p: 0, d: 0 },
-  'stain-04': { r: 31, c: 3, o: false, p: 0, d: 0 },
+  'stain-04': { r: 31, c: 3, o: false, p: 0, d: 0 }
 };
 
 export const map_tiles: SpriteMap = {
@@ -57,5 +57,5 @@ export const map_tiles: SpriteMap = {
   'road-05-t': { r: 4, c: 16, o: false, p: 0, d: 10 },
   'road-05-l': { r: 4, c: 17, o: false, p: 0, d: 10 },
   'road-05-b': { r: 4, c: 18, o: false, p: 0, d: 10 },
-  'road-05-r': { r: 4, c: 19, o: false, p: 0, d: 10 },
+  'road-05-r': { r: 4, c: 19, o: false, p: 0, d: 10 }
 };

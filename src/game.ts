@@ -17,7 +17,7 @@ export class Game {
     this.score = 0;
   }
 
-  onKeyDown(kc: number) {
+  onKeyDown(kc: number): void {
     this.w.onKeyDown(kc);
 
     //Main key presses
@@ -29,25 +29,25 @@ export class Game {
     }
   }
 
-  onKeyUp(kc: number) {
+  onKeyUp(kc: number): void {
     this.w.onKeyUp(kc);
   }
 
-  getWorld() {
+  getWorld(): World {
     return this.w;
   }
 
-  update() {
+  update(): void {
     this.w.update();
   }
 
-  draw(context: CanvasRenderingContext2D) {
+  draw(context: CanvasRenderingContext2D): void {
     // FIXME: This needs looking at
     const cr: Rect = {
       l: 0,
       t: 0,
       r: 0,
-      b: 0,
+      b: 0
     };
     this.w.draw(cr, context);
 
@@ -56,7 +56,7 @@ export class Game {
     context.fillStyle = 'white';
     context.strokeStyle = 'black';
     context.textBaseline = 'hanging';
-    var td = context.measureText(this.score.toString());
+    const td = context.measureText(this.score.toString());
     context.fillText(this.score.toString(), width - 10 - td.width, 10);
     context.restore();
   }

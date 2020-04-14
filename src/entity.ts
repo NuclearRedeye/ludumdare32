@@ -19,10 +19,13 @@ export class Entity {
     return { l: this.x, t: this.y, r: this.x + this.w, b: this.y + this.h };
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   think(): void {}
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
   update(cr: Rect): void {}
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
   draw(cr: Rect, context: CanvasRenderingContext2D): void {}
 
   getX(): number {

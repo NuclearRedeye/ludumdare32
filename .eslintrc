@@ -1,5 +1,5 @@
 {
-  "extends": "@nuclearredeye/eslint-config",
+  "extends": "@nuclearredeye/eslint-config/src/typescript.js",
   "parserOptions": {
     "sourceType": "module"
   }

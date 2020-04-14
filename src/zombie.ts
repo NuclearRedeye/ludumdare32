@@ -13,7 +13,7 @@ export class Zombie extends Person {
     this.setState(this.states.walk);
   }
 
-  think() {
+  think(): void {
     //Should I turn
     if (Math.floor(Math.random() * 40) == 7) {
       this.rotate(Math.floor(Math.random() * 2) - 1);

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import { Entity } from './entity.js';
 import { Person } from './person.js';
 import { Layer } from './layer.js';
@@ -28,24 +29,24 @@ export class World extends Entity {
     this.max_entities = 120;
     this.max_projectiles = 50;
 
-    this.layers = new Array();
+    this.layers = [];
     this.layers.push(new Layer('layer1', layer01, tiles, tile_sf));
     this.layers.push(new Layer('layer2', layer02, sprites, tile_sf));
 
-    this.entities = new Array();
+    this.entities = [];
 
-    for (var i = 0; i < 15; i++) {
+    for (let i = 0; i < 15; i++) {
       this.entities.push(new Civilian(this.getRect(), sprites, game));
     }
 
-    for (var i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
       this.entities.push(new Zombie(this.getRect(), sprites, game));
     }
 
     this.player = new Player(this.getRect(), sprites, game);
     this.entities.push(this.player);
 
-    this.projectiles = new Array();
+    this.projectiles = [];
 
     this.viewport = new ViewPort(0, 0, canvas.width, canvas.height, this.getRect(), this.player);
   }
@@ -62,7 +63,7 @@ export class World extends Entity {
     if (this.projectiles.length < this.max_projectiles) {
       this.projectiles.push(p);
     } else {
-      for (var i = 0; i < this.projectiles.length; i++) {
+      for (let i = 0; i < this.projectiles.length; i++) {
         if (this.projectiles[i].a == false) {
           this.projectiles[i] = p;
           break;
@@ -71,11 +72,11 @@ export class World extends Entity {
     }
   }
 
-  addEntity(e: Person) {
+  addEntity(e: Person): void {
     if (this.entities.length < this.max_entities) {
       this.entities.push(e);
     } else {
-      for (var i = 0; i < this.entities.length; i++) {
+      for (let i = 0; i < this.entities.length; i++) {
         if (this.entities[i].a == false) {
           this.entities[i] = e;
           break;
@@ -84,7 +85,7 @@ export class World extends Entity {
     }
   }
 
-  collisionRectCheck(a: Rect, b: Rect) {
+  collisionRectCheck(a: Rect, b: Rect): boolean {
     return !(
       Math.round(a.t) > Math.round(b.b) ||
       Math.round(a.b) < Math.round(b.t) ||
@@ -93,25 +94,25 @@ export class World extends Entity {
     );
   }
 
-  update() {
-    var cr = this.viewport.getRect();
+  update(): void {
+    const cr = this.viewport.getRect();
 
-    for (var i = 0; i < this.entities.length; i++) {
+    for (let i = 0; i < this.entities.length; i++) {
       this.entities[i].think();
       this.entities[i].update(cr);
     }
 
-    for (var i = 0; i < this.projectiles.length; i++) {
+    for (let i = 0; i < this.projectiles.length; i++) {
       this.projectiles[i].update(cr);
     }
 
     //Check Collisions
-    for (var i = 0; i < this.entities.length; i++) {
+    for (let i = 0; i < this.entities.length; i++) {
       //Don't check the player against self
       if (this.entities[i].a == false || this.entities[i] == this.player) continue;
 
       // Projectiles
-      for (var y = 0; y < this.projectiles.length; y++) {
+      for (let y = 0; y < this.projectiles.length; y++) {
         if (this.projectiles[y].a == true) {
           if (this.collisionRectCheck(this.projectiles[y].getRect(), this.entities[i].getRect())) {
             this.entities[i].hit(this.projectiles[y]);
@@ -126,13 +127,13 @@ export class World extends Entity {
     }
   }
 
-  draw(cr: Rect, context: CanvasRenderingContext2D) {
-    var vcr = this.viewport.getRect();
+  draw(cr: Rect, context: CanvasRenderingContext2D): void {
+    const vcr = this.viewport.getRect();
 
-    for (var i = 0; i < this.layers.length; i++) this.layers[i].draw(vcr, context);
+    for (let i = 0; i < this.layers.length; i++) this.layers[i].draw(vcr, context);
 
-    for (var i = 0; i < this.entities.length; i++) this.entities[i].draw(vcr, context);
+    for (let i = 0; i < this.entities.length; i++) this.entities[i].draw(vcr, context);
 
-    for (var i = 0; i < this.projectiles.length; i++) this.projectiles[i].draw(vcr, context);
+    for (let i = 0; i < this.projectiles.length; i++) this.projectiles[i].draw(vcr, context);
   }
 }

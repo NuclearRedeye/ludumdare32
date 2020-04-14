@@ -27,12 +27,12 @@ export class Layer {
     this.c.width = this.d[0].length * (this.ts.tw * this.sf);
     this.c.height = this.d.length * (this.ts.tw * this.sf);
 
-    this.cxt = <CanvasRenderingContext2D>this.c.getContext('2d');
+    this.cxt = this.c.getContext('2d') as CanvasRenderingContext2D;
     this.cxt.imageSmoothingEnabled = false;
-    for (var y = 0; y < this.d.length; y++) {
-      for (var x = 0; x < this.d[0].length; x++) {
+    for (let y = 0; y < this.d.length; y++) {
+      for (let x = 0; x < this.d[0].length; x++) {
         //TODO: Apply the scale factor during the draw.
-        var tile = this.ts.m[this.d[y][x]];
+        const tile = this.ts.m[this.d[y][x]];
         this.cxt.drawImage(
           this.ts.s,
           tile.c * this.ts.tw,

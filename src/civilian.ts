@@ -5,8 +5,8 @@ import { Rect } from './rect.js';
 
 export class Civilian extends Person {
   constructor(br: Rect, sprite: TileSet, game: Game) {
-    var sx = Math.floor(Math.random() * br.r) + br.l;
-    var sy = Math.floor(Math.random() * br.b) + br.t;
+    let sx = Math.floor(Math.random() * br.r) + br.l;
+    let sy = Math.floor(Math.random() * br.b) + br.t;
 
     if (Math.floor(Math.random() * 2 + 1) == 1) sy = Math.floor(Math.random() * 2 + 1) == 1 ? br.t : br.b;
     else sx = Math.floor(Math.random() * 2 + 1) == 1 ? br.l : br.r;

@@ -7,7 +7,7 @@ let canvas: HTMLCanvasElement;
 let context: CanvasRenderingContext2D;
 let game: Game;
 
-var tick = function(): void {
+const tick = function(): void {
   context.fillStyle = 'black';
   context.fillRect(0, 0, width, height);
   game.update();
@@ -28,13 +28,13 @@ window.onkeyup = function(e: KeyboardEvent): void {
 };
 
 window.onload = function(): void {
-  const img_sprites = <HTMLImageElement>document.getElementById('sprites');
-  const img_tiles = <HTMLImageElement>document.getElementById('tiles');
+  const img_sprites = document.getElementById('sprites') as HTMLImageElement;
+  const img_tiles = document.getElementById('tiles') as HTMLImageElement;
   const ts_tiles = new TileSet(img_tiles, map_tiles, 16, 16);
   const ts_sprites = new TileSet(img_sprites, map_sprites, 16, 16);
 
-  canvas = <HTMLCanvasElement>document.getElementById('canvas');
-  context = <CanvasRenderingContext2D>canvas.getContext('2d');
+  canvas = document.getElementById('canvas') as HTMLCanvasElement;
+  context = canvas.getContext('2d') as CanvasRenderingContext2D;
   context.imageSmoothingEnabled = false;
 
   game = new Game(ts_tiles, ts_sprites, canvas);

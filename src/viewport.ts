@@ -13,15 +13,15 @@ export class ViewPort extends Entity {
     this.e = e; //Entity to track;
   }
 
-  getRect() {
-    var l = this.e.x - this.e.w / 2 - this.w / 2;
+  getRect(): Rect {
+    let l = this.e.x - this.e.w / 2 - this.w / 2;
     if (l < this.br.l) l = this.br.l;
     else if (l > this.br.r - this.w) l = this.br.r - this.w;
-    var t = this.e.y - this.e.h / 2 - this.h / 2;
+    let t = this.e.y - this.e.h / 2 - this.h / 2;
     if (t < this.br.t) t = this.br.t;
     else if (t > this.br.b - this.h) t = this.br.b - this.h;
-    var r = l + this.w;
-    var b = t + this.h;
+    const r = l + this.w;
+    const b = t + this.h;
     return { l: l, t: t, r: r, b: b };
   }
 }
