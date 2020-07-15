@@ -155,9 +155,9 @@ export class Person extends Entity {
         this.game.score += 50;
 
         // FIXME: This shouldn't be here!
-        //const w = this.game.getWorld();
-        //w.addEntity(new Civilian(w.getRect(), this.sprites, this.game));
-        //w.addEntity(new Zombie(w.getRect(), this.sprites, this.game));
+        const w = this.game.getWorld();
+        w.addCivilian(this.sprites, this.game);
+        w.addZombie(this.sprites, this.game);
       }
     }
   }

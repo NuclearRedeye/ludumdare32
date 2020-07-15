@@ -72,6 +72,14 @@ export class World extends Entity {
     }
   }
 
+  addCivilian(sprites: TileSet, game: Game): void {
+    this.addEntity(new Civilian(this.getRect(), sprites, game));
+  }
+
+  addZombie(sprites: TileSet, game: Game): void {
+    this.addEntity(new Zombie(this.getRect(), sprites, game));
+  }
+
   addEntity(e: Person): void {
     if (this.entities.length < this.max_entities) {
       this.entities.push(e);
@@ -108,7 +116,7 @@ export class World extends Entity {
 
     //Check Collisions
     for (let i = 0; i < this.entities.length; i++) {
-      //Don't check the player against self
+      // Don't check the player against self
       if (this.entities[i].a == false || this.entities[i] == this.player) continue;
 
       // Projectiles
