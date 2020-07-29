@@ -2,6 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Watch",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "build:watch"]
+    },
+    {
       "name": "Server",
       "type": "node",
       "request": "launch",
@@ -20,7 +28,7 @@
   "compounds": [
     {
       "name": "Debug",
-      "configurations": ["Server", "Client"],
+      "configurations": ["Watch", "Server", "Client"],
       "stopAll": true,
       "preLaunchTask": "npm: build"
     }
