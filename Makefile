@@ -1,4 +1,20 @@
-NODE_VERSION ?= lts-alpine
+ifeq ($(OS),Windows_NT)
+    WATCH := inotifywait -qre close_write ${CURDIR}
+else
+    UNAME_S := $(shell uname -s)
+    ifeq ($(UNAME_S),Linux)
+        WATCH := inotifywait -qre close_write ${CURDIR}
+    endif
+    ifeq ($(UNAME_S),Darwin)
+        WATCH := fswatch -1 ${CURDIR}
+    endif
+endif
+
+PROJECT := $(notdir $(CURDIR))
+NODE_VERSION ?= fermium-alpine
+
+RELEASE_NAME ?= nuclearredeye/ludumdare32
+RELEASE_TAG ?= local
 
 SOURCES = $(wildcard src/**/*)
 
@@ -10,15 +26,17 @@ SOURCES = $(wildcard src/**/*)
 
 .DEFAULT_GOAL := start
 
-# Specific Targets
+# Project Specific Targets
 
 node_modules: package.json
-	@docker run -v $(CURDIR):/build:rw -w="/build" node:$(NODE_VERSION) npm install
+	@docker run --rm -v $(CURDIR):/$(PROJECT):rw -w=/$(PROJECT) node:$(NODE_VERSION) npm --no-fund install
 
 dist: node_modules $(SOURCES)
-	@docker run -v $(CURDIR):/build:rw -w="/build" node:$(NODE_VERSION) npm run build
+	@docker run --rm -v $(CURDIR):/$(PROJECT):rw -w=/$(PROJECT) node:$(NODE_VERSION) npm run build
 
 # Core Targets
+shell:
+	@docker run --rm -it -v $(CURDIR):/$(PROJECT):rw -w=/$(PROJECT) node:$(NODE_VERSION) sh
 
 clean:
 	@rm -rf dist
@@ -27,11 +45,17 @@ distclean: clean
 	@rm -rf node_modules
 
 lint: node_modules
-	@docker run -v $(CURDIR):/build:rw -w="/build" node:$(NODE_VERSION) npm run lint
+	@docker run --rm -v $(CURDIR):/$(PROJECT):rw -w=/$(PROJECT) node:$(NODE_VERSION) npm run lint
 
 test: node_modules
-	@docker run -v $(CURDIR):/build:rw -w="/build" node:$(NODE_VERSION) npm run test
+	@docker run --rm -v $(CURDIR):/$(PROJECT):rw -w=/$(PROJECT) node:$(NODE_VERSION) npm run test
 
 start: dist
-	@docker run -p 5000:5000 -v $(CURDIR):/debug:ro -w="/debug" node:$(NODE_VERSION) npm run debug
+	@docker run --rm -p 5000:5000 -v $(CURDIR):/$(PROJECT):ro -w=/$(PROJECT) node:$(NODE_VERSION) npm run debug
+
+watch: dist
+	@docker run --rm -p 5000:5000 -v $(CURDIR):/$(PROJECT):rw -w=/$(PROJECT) node:$(NODE_VERSION) sh -c "npm run debug; nodemon --watch ./src --exec \"npm run build\""
+
+release: dist
+	@docker build . -t $(RELEASE_NAME):$(RELEASE_TAG)
 
